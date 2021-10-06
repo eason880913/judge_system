@@ -172,12 +172,12 @@ def evaluate(model, data_loader, device):
     
     model.train()
 
-    F1, F2, F3, F4 = utils.compute_f1(pred_dict)
+    F1, F1_2, F1_3, F1_4 = utils.compute_f1(pred_dict)
     results = {'NLL': nll_meter.avg,
                'F1': F1,
-               'F2': F2,
-               'F3': F3,
-               'F4': F4}
+               'F1_2': F1_2,
+               'F1_3': F1_3,
+               'F1_4': F1_4}
 
     return results, pred_dict
 
