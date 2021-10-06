@@ -185,15 +185,7 @@ def get_model(args):
     if args.name == 'DistilBERT':
         model = DistilBERT(args.hidden_size, args.num_labels,
                            drop_prob=args.drop_prob,
-                           freeze=args.freeze,
-                           use_img=args.use_img,
-                           img_size=args.img_size)
-    elif args.name == 'ALBERT':
-        model = ALBERT(args.hidden_size, args.num_labels,
-                       drop_prob=args.drop_prob,
-                       freeze=args.freeze,
-                       use_img=args.use_img,
-                       img_size=args.img_size)
+                           freeze=args.freeze,)
     
     return model
 

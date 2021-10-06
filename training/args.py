@@ -107,14 +107,6 @@ def get_train_args():
                         type=lambda s: s.lower().startswith('t'),
                         default=False,
                         help='Whether to freeze the pretrained BERT model')
-    parser.add_argument('--use_img',
-                        type=lambda s: s.lower().startswith('t'),
-                        default=False,
-                        help='Whether to use images for prediction')
-    parser.add_argument('--img_size',
-                        type=int,
-                        default=512,
-                        help='Size of image feature extracted')
     parser.add_argument('--metric_name',
                         type=str,
                         default='F1',
