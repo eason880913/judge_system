@@ -16,7 +16,7 @@ class DistilBERT(nn.Module):
     by Victor Sanh, Lysandre Debut, Julien Chaumond, Thomas Wolf
     (https://arxiv.org/abs/1910.01108)
     """
-    def __init__(self, hidden_size, num_labels, drop_prob, freeze,):
+    def __init__(self, hidden_size, num_labels, drop_prob, freeze):
         super(DistilBERT, self).__init__()
         config = DistilBertConfig(vocab_size=119547)
         self.distilbert = DistilBertModel(config)
