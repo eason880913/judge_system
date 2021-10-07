@@ -18,12 +18,12 @@ async def fetch(url, session):
         soup_for_content = BeautifulSoup(html_body, "lxml")  # 解析HTML原始碼
  
         content = soup_for_content.select('div[class="row"]')
-        # if content == []:
-            # with open (args.error_file,'a')as fw:
-            #     fw.write(url+'\n')
-        # else:
-            # with open (f'{args.ouput_folder}/{uid}.txt','w',encoding='utf-8') as f1:
-            #     f1.write(content[3].text)
+        if content == []:
+            with open (args.error_file,'a')as fw:
+                fw.write(url+'\n')
+        else:
+            with open (f'{args.ouput_folder}/{uid}.txt','w',encoding='utf-8') as f1:
+                f1.write(content[3].text)
 
 async def main(args):
     if not os.path.isdir(args.ouput_folder):
