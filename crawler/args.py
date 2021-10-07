@@ -6,9 +6,17 @@ def get_crawler_args():
 
     parser.add_argument('--input_file',
                         type=str,
-                        default='./data/output1.xlsx',
+                        default='./data/input.xlsx',
                         help='File to load for the scraped laws')
-
+    parser.add_argument('--ouput_folder',
+                        type=str,
+                        default='./data/raw_metadata',
+                        help='File to load for the scraped laws')
+    parser.add_argument('--error_file',
+                        type=str,
+                        default='./data/error.csv',
+                        help='File to load for the scraped laws')
+    #後來不全存
     parser.add_argument('--ouput_file_path',
                         type=str,
                         default='./data/crawler_result.json',
