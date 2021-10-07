@@ -16,16 +16,14 @@ class DistilBERT(nn.Module):
     by Victor Sanh, Lysandre Debut, Julien Chaumond, Thomas Wolf
     (https://arxiv.org/abs/1910.01108)
     """
-    def __init__(self, hidden_size, num_labels, drop_prob, freeze, img_size):
+    def __init__(self, hidden_size, num_labels, drop_prob, freeze,):
         super(DistilBERT, self).__init__()
-        self.img_size = img_size
         config = DistilBertConfig(vocab_size=119547)
         self.distilbert = DistilBertModel(config)
         for param in self.distilbert.parameters():
             param.requires_grad = not freeze
         self.classifier = layers.DistilBERTClassifier(hidden_size, num_labels,
-                                                      drop_prob=drop_prob,
-                                                      img_size=img_size)
+                                                      drop_prob=drop_prob)
 
     def forward(self, input_idxs, atten_masks):
         con_x = self.distilbert(input_ids=input_idxs,
