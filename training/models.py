@@ -6,7 +6,7 @@ import torch.nn.functional as F
 import torchvision
 import layers
 
-from transformers import DistilBertModel, AlbertModel, DistilBertConfig
+from transformers import DistilBertModel, DistilBertConfig
 
 class DistilBERT(nn.Module):
     """DistilBERT model to classify news
